@@ -69,7 +69,7 @@ public class Dispatcher {
         case THEME_MANAGER_PRESENTER:
             ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
             if ("createTheme".equals(action)) {
-                // TODO uI2Presenter.setters((request.getParams().get("param")));
+                model.put("themeName", request.getParams().get("themeName"));
                 nextView = themeManagerPresenter.createTheme(model);
             } else if ("voting".equals(action)) {
                 // TODO uI2Presenter.setters((request.getParams().get("param")));

@@ -1,5 +1,5 @@
 package es.upm.miw.apaw.rest.business.views;
 
-public class TransferObject2 {
+public class TransferObjectVoting {
 
 }

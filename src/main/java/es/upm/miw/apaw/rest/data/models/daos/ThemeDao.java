@@ -1,5 +1,7 @@
 package es.upm.miw.apaw.rest.data.models.daos;
 
-public interface ThemeDao extends GenericDao<ThemeDao, Integer> {
+import es.upm.miw.apaw.rest.business.models.entities.Theme;
+
+public interface ThemeDao extends GenericDao<Theme, Integer> {
 
 }
