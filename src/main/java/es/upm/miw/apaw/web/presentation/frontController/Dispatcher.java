@@ -13,23 +13,29 @@ import es.upm.miw.apaw.web.presentation.views.VoitingView;
 
 public class Dispatcher {
 
+    private static final String VOITING_PRESENTER = "VoitingPresenter";
+
+    private static final String THEME_MANAGER_PRESENTER = "ThemeManagerPresenter";
+
+    private static final String ERROR_PRESENTER = "ErrorPresenter";
+
     public void doGet(HttpRequest request, HttpResponse response) {
         Model model = new Model();
         String presenter = request.getPath() + "Presenter";
         String nextView = request.getPath() + "View";
 
         switch (presenter) {
-        case "UI1Presenter":
-            VoitingPresenter uI1Presenter = new VoitingPresenter();
-            nextView = uI1Presenter.process(model);
+        case VOITING_PRESENTER:
+            VoitingPresenter voitingPresenter = new VoitingPresenter();
+            nextView = voitingPresenter.process(model);
             break;
-        case "UI2Presenter":
-            ThemeManagerPresenter uI2Presenter = new ThemeManagerPresenter();
-            nextView = uI2Presenter.process(model);
+        case THEME_MANAGER_PRESENTER:
+            ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+            nextView = themeManagerPresenter.process(model);
             break;
-        case "UI3Presenter":
-            ErrorPresenter uI3Presenter = new ErrorPresenter();
-            nextView = uI3Presenter.process(model);
+        case ERROR_PRESENTER:
+            ErrorPresenter errorPresenter = new ErrorPresenter();
+            nextView = errorPresenter.process(model);
             break;
         }
         this.show(nextView, model);
@@ -42,35 +48,35 @@ public class Dispatcher {
         String nextView = request.getPath() + "View";
 
         switch (controller) {
-        case "UI1Presenter":
-            VoitingPresenter uI1Presenter = new VoitingPresenter();
-            if ("login".equals(action)) {
+        case VOITING_PRESENTER:
+            VoitingPresenter voitingPresenter = new VoitingPresenter();
+            if ("voteTheme".equals(action)) {
                 // TODO uI1Presenter.setters((request.getParams().get("param")));
-                nextView = uI1Presenter.voteTheme(model);
-            } else if ("logout".equals(action)) {
+                nextView = voitingPresenter.voteTheme(model);
+            } else if ("themeManager".equals(action)) {
                 // TODO uI1Presenter.setters((request.getParams().get("param")));
-                nextView = uI1Presenter.themeManager(model);
+                nextView = voitingPresenter.themeManager(model);
             } else {
                 model.put("error", "Acción no permitida: " + action);
             }
             break;
-        case "UI2Presenter":
-            ThemeManagerPresenter uI2Presenter = new ThemeManagerPresenter();
-            if ("action1".equals(action)) {
+        case THEME_MANAGER_PRESENTER:
+            ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+            if ("createTheme".equals(action)) {
                 // TODO uI2Presenter.setters((request.getParams().get("param")));
-                nextView = uI2Presenter.createTheme(model);
+                nextView = themeManagerPresenter.createTheme(model);
+            } else if ("voiting".equals(action)) {
+                // TODO uI2Presenter.setters((request.getParams().get("param")));
+                nextView = themeManagerPresenter.voiting(model);
             } else {
                 model.put("error", "Acción no permitida: " + action);
             }
             break;
-        case "UI3Presenter":
-            ErrorPresenter uI3Presenter = new ErrorPresenter();
-            if ("action2".equals(action)) {
+        case ERROR_PRESENTER:
+            ErrorPresenter ErrorPresenter = new ErrorPresenter();
+            if ("voiting".equals(action)) {
                 // TODO uI3Presenter.setters((request.getParams().get("param")));
-                nextView = uI3Presenter.action2(model);
-            } else if ("action3".equals(action)) {
-                // TODO uI3Presenter.setters((request.getParams().get("param")));
-                nextView = uI3Presenter.action3(model);
+                nextView = ErrorPresenter.voiting(model);
             } else {
                 model.put("error", "Acción no permitida: " + action);
             }
@@ -82,13 +88,10 @@ public class Dispatcher {
     private void show(String nextView, Model model) {
         View view;
         switch (nextView) {
-        case "UI1View":
+        case VOITING_PRESENTER:
             view = new VoitingView();
             break;
-        case "UI2View":
-            view = new UI2View();
-            break;
-        case "UI3View":
+        case THEME_MANAGER_PRESENTER:
             view = new ThemeManagerView();
             break;
         default:

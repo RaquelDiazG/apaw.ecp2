@@ -11,7 +11,7 @@ public class ErrorPresenter {
         return "ErrorView";
     }
 
-    public String action2(Model model) {
+    public String voiting(Model model) {
         model.put("log", "ErrorPresenter:voiting");
         new BusinessController2().m2(new TransferObject1());
         return "ErrorView";
