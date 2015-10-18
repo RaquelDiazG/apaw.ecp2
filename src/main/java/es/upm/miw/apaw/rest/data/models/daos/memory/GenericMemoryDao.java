@@ -43,8 +43,4 @@ public abstract class GenericMemoryDao<T, ID> implements GenericDao<T, ID> {
 
     protected abstract ID getId(T entity);
 
-    public abstract T findByName(String name);
-
-    public abstract List<String> findAllNames();
-
 }

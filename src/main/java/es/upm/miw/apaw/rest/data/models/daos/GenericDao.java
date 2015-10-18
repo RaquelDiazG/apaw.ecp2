@@ -14,7 +14,4 @@ public interface GenericDao<T, ID> {
 
     List<T> findAll();
 
-    T findByName(String name);
-
-    List<String> findAllNames();
 }
