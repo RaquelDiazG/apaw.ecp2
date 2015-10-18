@@ -1,19 +1,22 @@
 package es.upm.miw.apaw.web.presentation.presenters;
 
-import es.upm.miw.apaw.rest.business.controllers.BusinessController;
+import es.upm.miw.apaw.rest.business.controllers.BusinessControllerTheme;
+import es.upm.miw.apaw.rest.business.controllers.BusinessControllerVote;
 import es.upm.miw.apaw.web.presentation.models.Model;
 
 public class ErrorPresenter {
 
-    private BusinessController businessController = new BusinessController();
+    private BusinessControllerTheme businessControllerTheme = new BusinessControllerTheme();
+
+    private BusinessControllerVote businessControllerVote = new BusinessControllerVote();
 
     public String process(Model model) {
-        model.put("themes", businessController.getAllThemes());
+        model.put("themes", businessControllerTheme.getAllThemes());
         return "ErrorView";
     }
 
     public String voting(Model model) {
-        model.put("themes", businessController.getAllVotings());
+        model.put("themes", businessControllerVote.getAllVotings());
         return "VotingView";
     }
 
