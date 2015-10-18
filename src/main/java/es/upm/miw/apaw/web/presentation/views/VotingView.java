@@ -2,7 +2,7 @@ package es.upm.miw.apaw.web.presentation.views;
 
 import es.upm.miw.apaw.web.presentation.models.Model;
 
-public class VoitingView implements View {
+public class VotingView implements View {
 
     @Override
     public void show(Model model) {

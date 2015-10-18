@@ -4,23 +4,23 @@ import es.upm.miw.apaw.rest.business.controllers.BusinessController1;
 import es.upm.miw.apaw.rest.business.views.TransferObject2;
 import es.upm.miw.apaw.web.presentation.models.Model;
 
-public class VoitingPresenter {
+public class VotingPresenter {
 
     public String process(Model model) {
-        model.put("log", "VoitingPresenter:process");
-        return "VoitingView";
+        model.put("log", "VotingPresenter:process");
+        return "VotingView";
     }
 
     public String voteTheme(Model model) {
-        model.put("log", "VoitingPresenter:voteTheme");
+        model.put("log", "VotingPresenter:voteTheme");
         new BusinessController1().m2(new TransferObject2());
-        return "VoitingView";
+        return "VotingView";
     }
 
     public String themeManager(Model model) {
-        model.put("log", "UI1Presenter:themeManager");
+        model.put("log", "VotingPresenter:themeManager");
         new BusinessController1().m2(new TransferObject2());
-        return "UI1VVoitingViewiew";
+        return "VotingView";
     }
 
 }

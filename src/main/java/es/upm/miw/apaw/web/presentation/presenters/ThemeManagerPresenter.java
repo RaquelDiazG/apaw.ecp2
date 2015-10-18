@@ -18,8 +18,8 @@ public class ThemeManagerPresenter {
         return "ThemeManagerView";
     }
 
-    public String voiting(Model model) {
-        model.put("log", "ThemeManagerPresenter:voiting");
+    public String voting(Model model) {
+        model.put("log", "ThemeManagerPresenter:voting");
         TransferObject2 transferObject2 = new BusinessController2().m1();
         model.put("transferObject2", transferObject2);
         return "ThemeManagerView";
