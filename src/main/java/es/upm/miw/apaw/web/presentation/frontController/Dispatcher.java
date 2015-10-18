@@ -19,6 +19,12 @@ public class Dispatcher {
 
     private static final String ERROR_PRESENTER = "ErrorPresenter";
 
+    private static final String VOTING_VIEW = "VotingView";
+
+    private static final String THEME_MANAGER_VIEW = "ThemeManagerView";
+
+    private static final String ERROR_VIEW = "ErrorView";
+
     public void doGet(HttpRequest request, HttpResponse response) {
         Model model = new Model();
         String presenter = request.getPath() + "Presenter";
@@ -88,10 +94,10 @@ public class Dispatcher {
     private void show(String nextView, Model model) {
         View view;
         switch (nextView) {
-        case VOTING_PRESENTER:
+        case VOTING_VIEW:
             view = new VotingView();
             break;
-        case THEME_MANAGER_PRESENTER:
+        case THEME_MANAGER_VIEW:
             view = new ThemeManagerView();
             break;
         default:
