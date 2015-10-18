@@ -7,7 +7,7 @@ import es.upm.miw.apaw.rest.business.models.entities.Vote;
 import es.upm.miw.apaw.rest.business.views.TransferObjectTheme;
 import es.upm.miw.apaw.rest.data.models.daos.DaoFactory;
 
-public class BusinessControllerThemeManager {
+public class BusinessController {
 
     public TransferObjectTheme getAll() {
         List<String> themes = DaoFactory.getFactory().getThemeDao().findAllNames();
