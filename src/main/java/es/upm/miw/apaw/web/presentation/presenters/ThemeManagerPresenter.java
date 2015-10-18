@@ -9,16 +9,16 @@ public class ThemeManagerPresenter {
     private BusinessController businessController = new BusinessController();
 
     public String process(Model model) {
-        model.put("themes", businessController.getAll());
+        model.put("themes", businessController.getAllThemes());
         return "ThemeManagerView";
     }
 
     public String createTheme(Model model) {
-        int id = businessController.nextId();
+        int id = businessController.nextIdTheme();
         String name = model.get("themeName").toString();
         Theme theme = new Theme(id, name);
-        businessController.create(theme);
-        model.put("themes", businessController.getAll());
+        businessController.createTheme(theme);
+        model.put("themes", businessController.getAllThemes());
         return "ThemeManagerView";
     }
 

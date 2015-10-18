@@ -8,19 +8,19 @@ import es.upm.miw.apaw.rest.data.models.daos.DaoFactory;
 
 public class BusinessController {
 
-    public List<String> getAll() {
+    public List<String> getAllThemes() {
         return DaoFactory.getFactory().getThemeDao().findAllNames();
     }
 
-    public void create(Theme theme) {
+    public void createTheme(Theme theme) {
         DaoFactory.getFactory().getThemeDao().create(theme);
     }
 
-    public int nextId() {
+    public int nextIdTheme() {
         return DaoFactory.getFactory().getThemeDao().findAll().size();
     }
 
-    public int nextIdValue() {
+    public int nextIdVote() {
         return DaoFactory.getFactory().getVoteDao().findAll().size();
     }
 
@@ -28,7 +28,7 @@ public class BusinessController {
         return DaoFactory.getFactory().getThemeDao().findByName(name);
     }
 
-    public void vote(Vote vote) {
+    public void voteTheme(Vote vote) {
         DaoFactory.getFactory().getVoteDao().create(vote);
     }
 }

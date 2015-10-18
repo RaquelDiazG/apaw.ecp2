@@ -10,18 +10,18 @@ public class VotingPresenter {
     private BusinessController businessController = new BusinessController();
 
     public String process(Model model) {
-        model.put("themes", businessController.getAll());
+        model.put("themes", businessController.getAllThemes());
         return "VotingView";
     }
 
     public String voteTheme(Model model) {
-        int id = businessController.nextIdValue();
+        int id = businessController.nextIdVote();
         String name = model.get("themeName").toString();
         int value = new Integer(model.get("value").toString());
         Theme theme = businessController.getTheme(name);
         Vote vote = new Vote(id, value, theme);
-        new BusinessController().vote(vote);
-        model.put("themes", businessController.getAll());
+        new BusinessController().voteTheme(vote);
+        model.put("themes", businessController.getAllThemes());
         return "VotingView";
     }
 
