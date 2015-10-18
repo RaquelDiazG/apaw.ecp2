@@ -1,4 +1,7 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw;
+
+import es.upm.miw.apaw.http.HttpRequest;
+import es.upm.miw.apaw.http.HttpResponse;
 
 public class Client {
 

@@ -1,7 +1,10 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw.rest.data.models.daos.memory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import es.upm.miw.apaw.rest.business.models.entities.Theme;
+import es.upm.miw.apaw.rest.data.models.daos.ThemeDao;
 
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer>implements ThemeDao {
 

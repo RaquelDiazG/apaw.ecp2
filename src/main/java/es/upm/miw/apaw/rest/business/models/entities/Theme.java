@@ -1,4 +1,4 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw.rest.business.models.entities;
 
 public class Theme {
 

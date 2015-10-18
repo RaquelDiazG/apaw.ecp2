@@ -1,4 +1,6 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw.web.presentation.views;
+
+import es.upm.miw.apaw.web.presentation.models.Model;
 
 public class ErrorView implements View {
 

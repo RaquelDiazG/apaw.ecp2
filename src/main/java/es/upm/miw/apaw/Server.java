@@ -1,4 +1,10 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw;
+
+import es.upm.miw.apaw.http.HttpMethod;
+import es.upm.miw.apaw.http.HttpRequest;
+import es.upm.miw.apaw.http.HttpResponse;
+import es.upm.miw.apaw.http.HttpStatus;
+import es.upm.miw.apaw.web.presentation.frontController.FrontController;
 
 public class Server {
 

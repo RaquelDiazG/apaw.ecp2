@@ -1,4 +1,4 @@
-package es.upm.miw.apaw.voiting;
+package es.upm.miw.apaw.http;
 
 import java.util.HashMap;
 import java.util.Map;
