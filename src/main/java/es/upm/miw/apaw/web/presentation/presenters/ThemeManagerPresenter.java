@@ -2,7 +2,6 @@ package es.upm.miw.apaw.web.presentation.presenters;
 
 import es.upm.miw.apaw.rest.business.controllers.BusinessControllerThemeManager;
 import es.upm.miw.apaw.rest.business.models.entities.Theme;
-import es.upm.miw.apaw.rest.business.views.TransferObjectTheme;
 import es.upm.miw.apaw.web.presentation.models.Model;
 
 public class ThemeManagerPresenter {
@@ -22,10 +21,7 @@ public class ThemeManagerPresenter {
     }
 
     public String voting(Model model) {
-        model.put("log", "ThemeManagerPresenter:voting");
-        TransferObjectTheme transferObject2 = new BusinessControllerThemeManager().getAll();
-        model.put("transferObject2", transferObject2);
-        return "ThemeManagerView";
+        return "VotingView";
     }
 
 }
