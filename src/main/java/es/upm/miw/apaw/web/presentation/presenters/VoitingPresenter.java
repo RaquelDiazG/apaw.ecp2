@@ -7,20 +7,20 @@ import es.upm.miw.apaw.web.presentation.models.Model;
 public class VoitingPresenter {
 
     public String process(Model model) {
-        model.put("log", "UI1Presenter:process");
-        return "UI1View";
+        model.put("log", "VoitingPresenter:process");
+        return "VoitingView";
     }
 
-    public String login(Model model) {
-        model.put("log", "UI1Presenter:login");
+    public String voteTheme(Model model) {
+        model.put("log", "VoitingPresenter:voteTheme");
         new BusinessController1().m2(new TransferObject2());
-        return "UI1View";
+        return "VoitingView";
     }
 
-    public String logout(Model model) {
-        model.put("log", "UI1Presenter:logout");
+    public String themeManager(Model model) {
+        model.put("log", "UI1Presenter:themeManager");
         new BusinessController1().m2(new TransferObject2());
-        return "UI1View";
+        return "UI1VVoitingViewiew";
     }
 
 }

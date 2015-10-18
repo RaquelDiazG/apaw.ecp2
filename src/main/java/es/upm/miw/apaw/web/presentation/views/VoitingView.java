@@ -6,7 +6,7 @@ public class VoitingView implements View {
 
     @Override
     public void show(Model model) {
-        System.out.println("UI1View");
+        System.out.println("Voting Page");
         System.out.println("   " + model.get("log"));
     }
 

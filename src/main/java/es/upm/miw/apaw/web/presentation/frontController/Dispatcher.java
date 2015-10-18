@@ -46,10 +46,10 @@ public class Dispatcher {
             VoitingPresenter uI1Presenter = new VoitingPresenter();
             if ("login".equals(action)) {
                 // TODO uI1Presenter.setters((request.getParams().get("param")));
-                nextView = uI1Presenter.login(model);
+                nextView = uI1Presenter.voteTheme(model);
             } else if ("logout".equals(action)) {
                 // TODO uI1Presenter.setters((request.getParams().get("param")));
-                nextView = uI1Presenter.logout(model);
+                nextView = uI1Presenter.themeManager(model);
             } else {
                 model.put("error", "Acción no permitida: " + action);
             }
@@ -58,7 +58,7 @@ public class Dispatcher {
             ThemeManagerPresenter uI2Presenter = new ThemeManagerPresenter();
             if ("action1".equals(action)) {
                 // TODO uI2Presenter.setters((request.getParams().get("param")));
-                nextView = uI2Presenter.action1(model);
+                nextView = uI2Presenter.createTheme(model);
             } else {
                 model.put("error", "Acción no permitida: " + action);
             }

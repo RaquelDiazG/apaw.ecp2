@@ -7,15 +7,22 @@ import es.upm.miw.apaw.web.presentation.models.Model;
 public class ThemeManagerPresenter {
 
     public String process(Model model) {
-        model.put("log", "UI2Presenter:process");
-        return "UI2View";
+        model.put("log", "ThemeManagerPresenter:process");
+        return "ThemeManagerView";
     }
 
-    public String action1(Model model) {
-        model.put("log", "UI2Presenter:action1");
+    public String createTheme(Model model) {
+        model.put("log", "ThemeManagerPresenter:createTheme");
         TransferObject2 transferObject2 = new BusinessController2().m1();
         model.put("transferObject2", transferObject2);
-        return "UI2View";
+        return "ThemeManagerView";
+    }
+
+    public String voiting(Model model) {
+        model.put("log", "ThemeManagerPresenter:voiting");
+        TransferObject2 transferObject2 = new BusinessController2().m1();
+        model.put("transferObject2", transferObject2);
+        return "ThemeManagerView";
     }
 
 }

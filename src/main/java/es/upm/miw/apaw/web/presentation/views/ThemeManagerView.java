@@ -6,7 +6,7 @@ public class ThemeManagerView implements View {
 
     @Override
     public void show(Model model) {
-        System.out.println("UI3View");
+        System.out.println("Theme Manager Page");
         System.out.println("   " + model.get("log"));
     }
 
