@@ -31,4 +31,15 @@ public class VoteMemoryDao extends GenericMemoryDao<Vote, Integer>implements Vot
         return votes;
     }
 
+    @Override
+    public double averageVotes(Theme theme) {
+        double sum = 0;
+        List<Vote> votesTheme = this.findByTheme(theme);
+        for (Vote vote : votesTheme) {
+            sum += vote.getVote();
+        }
+        double average = sum / votesTheme.size();
+        return average;
+    }
+
 }

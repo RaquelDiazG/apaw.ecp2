@@ -10,7 +10,7 @@ public class VotingPresenter {
     private BusinessController businessController = new BusinessController();
 
     public String process(Model model) {
-        model.put("themes", businessController.getAllThemes());
+        model.put("themes", businessController.getAllVotings());
         return "VotingView";
     }
 
@@ -20,8 +20,8 @@ public class VotingPresenter {
         int value = new Integer(model.get("value").toString());
         Theme theme = businessController.getTheme(name);
         Vote vote = new Vote(id, value, theme);
-        new BusinessController().voteTheme(vote);
-        model.put("themes", businessController.getAllThemes());
+        businessController.voteTheme(vote);
+        model.put("themes", businessController.getAllVotings());
         return "VotingView";
     }
 
