@@ -29,4 +29,9 @@ public class Vote {
         return theme;
     }
 
+    @Override
+    public String toString() {
+        return "Vote [id=" + id + ", vote=" + vote + ", theme=" + theme + "]";
+    }
+
 }
