@@ -57,6 +57,8 @@ public class Dispatcher {
         case VOTING_PRESENTER:
             VotingPresenter votingPresenter = new VotingPresenter();
             if ("voteTheme".equals(action)) {
+                model.put("themeName", request.getParams().get("themeName"));
+                model.put("value", request.getParams().get("value"));
                 nextView = votingPresenter.voteTheme(model);
             } else if ("themeManager".equals(action)) {
                 nextView = votingPresenter.themeManager(model);
