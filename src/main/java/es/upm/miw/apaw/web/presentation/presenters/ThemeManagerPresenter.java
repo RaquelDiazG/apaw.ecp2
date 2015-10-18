@@ -23,6 +23,7 @@ public class ThemeManagerPresenter {
     }
 
     public String voting(Model model) {
+        model.put("themes", businessController.getAllVotings());
         return "VotingView";
     }
 
